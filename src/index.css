@@ -1,0 +1,479 @@
+/* ------------------------------------------------------------------
+   Delhi College navy and gold look for the whole course app.
+   The second half of this file styles plain elements (buttons, inputs,
+   tables) and a few helper classes you can use in your own tasks:
+   card, row, stack, grid, badge, muted, error, success, price, notice.
+   ------------------------------------------------------------------ */
+
+:root {
+  --navy: #0f2344;
+  --navy-soft: #1c3560;
+  --gold: #c9a227;
+  --gold-dark: #9a7a14;
+  --cream: #faf6ec;
+  --page: #f4f2ed;
+  --line: #d9dde4;
+  --text: #1d2433;
+  --muted: #6b7484;
+  --red: #b42318;
+  --red-soft: #fdecea;
+  --green: #1e7d4f;
+  --green-soft: #e6f4ec;
+
+  font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--page);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+code,
+pre {
+  font-family: 'DejaVu Sans Mono', Consolas, monospace;
+  font-size: 0.85em;
+}
+
+/* ---------- App frame ---------- */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 22px 24px 26px;
+  border-bottom: 4px solid var(--gold);
+}
+
+.app-header h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin: 6px 0 4px;
+  font-weight: 400;
+}
+
+.app-header p {
+  margin: 0;
+  color: #c8d0de;
+}
+
+.brand {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.brand-dot {
+  margin: 0 8px;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Home page menu ---------- */
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.topic-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px 12px;
+}
+
+.topic-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.topic-head h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.topic-summary {
+  margin: 2px 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.topic-number {
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.1rem;
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+
+.level {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.level-beginner {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.level-intermediate {
+  background: var(--cream);
+  color: var(--gold-dark);
+}
+
+.task-links {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.task-links a {
+  display: flex;
+  gap: 10px;
+  padding: 6px 4px;
+  border-top: 1px solid #eef0f3;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.task-links a:hover {
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.task-number {
+  color: var(--gold-dark);
+  font-weight: 600;
+  min-width: 52px;
+}
+
+/* ---------- Task page ---------- */
+
+.task-view {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.crumbs {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.crumbs a,
+.pager a {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.task-title {
+  display: flex;
+  align-items: stretch;
+  margin: 14px 0 16px;
+}
+
+.task-badge {
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+}
+
+.task-title > div {
+  background: var(--navy);
+  color: #fff;
+  flex: 1;
+  padding: 8px 14px;
+}
+
+.task-title h2 {
+  color: #fff;
+  font-weight: 400;
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.task-title code {
+  color: var(--gold);
+}
+
+.stage {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.stage > :first-child,
+.stage > * > :first-child {
+  margin-top: 0;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.crash {
+  background: var(--red-soft);
+  border-left: 4px solid var(--red);
+  padding: 12px 14px;
+  color: var(--red);
+}
+
+/* ---------- Building blocks for your components ---------- */
+
+button {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--navy);
+  color: #fff;
+  border: 1px solid var(--navy);
+  border-radius: 6px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--navy-soft);
+}
+
+button:disabled {
+  background: #c3c8d1;
+  border-color: #c3c8d1;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: #fff;
+  color: var(--navy);
+}
+
+button.secondary:hover {
+  background: var(--cream);
+}
+
+button.gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+button.danger {
+  background: #fff;
+  color: var(--red);
+  border-color: var(--red);
+}
+
+button.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  font-size: 0.92rem;
+  padding: 7px 10px;
+  border: 1px solid #c4cad4;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: var(--navy);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th {
+  background: var(--navy);
+  color: #fff;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 7px 10px;
+}
+
+td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #e6e9ee;
+}
+
+tbody tr:nth-child(even) td {
+  background: #faf9f6;
+}
+
+ul,
+ol {
+  padding-left: 22px;
+}
+
+a {
+  color: var(--navy);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: #e8ebf1;
+  color: var(--navy);
+}
+
+.badge.gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.badge.green {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.badge.red {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.error {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.success {
+  color: var(--green);
+  font-weight: 500;
+}
+
+.price {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.notice {
+  background: var(--cream);
+  border-left: 4px solid var(--gold);
+  padding: 10px 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+.address-bar {
+  font-family: 'DejaVu Sans Mono', Consolas, monospace;
+  font-size: 0.8rem;
+  background: #eef0f4;
+  color: var(--navy);
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-bottom: 12px;
+}
