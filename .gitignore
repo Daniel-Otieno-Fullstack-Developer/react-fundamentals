@@ -1,0 +1,19 @@
+# Dependencies and build output
+node_modules
+dist
+dist-ssr
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Handouts are shared in class, not on GitHub
+*.pdf
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
