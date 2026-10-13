@@ -1,0 +1,6 @@
+.cards { display: flex; gap: 20px; }
+.card { width: 240px; padding: 20px;
+  border-radius: 12px; background: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2); }
+.course { color: #149eca; }
+.card button { background: #149eca; color: white; }
